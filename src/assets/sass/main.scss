@@ -1,0 +1,42 @@
+// ページ遷移アニメーション
+.v-enter-active, .v-leave-active {
+	transition: opacity .5s;
+}
+.v-enter, .v-leave-to {
+	opacity: 0;
+}
+
+
+// ヘッダ
+#nav {
+  width: 100vw;
+	height: $header-height-pc;
+  position: absolute;
+	top: 0;
+	left: 0;
+  background: rgba(180, 255, 180, 0.8);
+	@include sp {
+		height: $header-height-sp;
+	}
+  ul {
+		display: flex;
+		height: 100%;
+		padding: 0 $site-outer-width;
+		li {
+			height: 100%;
+			min-width: 12%;
+     	&:hover {
+				background: rgba(120, 255, 120, 0.9);
+			}
+			a {
+				display: block;
+				height: 100%;
+				line-height: $header-height-pc;
+				text-decoration: none;
+				@include sp {
+					line-height: $header-height-sp;
+				}
+			}
+		}
+  }
+}
