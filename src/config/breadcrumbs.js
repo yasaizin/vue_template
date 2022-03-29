@@ -4,13 +4,31 @@ export default {
 			name: 'ホーム',
 		},
 	],
-	'/routing': [
+	'/profile': [
 		{
 			name: 'ホーム',
 			path: '/',
 		},
 		{
-			name: 'ルーティング'
+			name: 'プロフィール'
+		},
+	],
+	'/works': [
+		{
+			name: 'ホーム',
+			path: '/',
+		},
+		{
+			name: '制作物',
+		},
+	],
+	'/contact': [
+		{
+			name: 'ホーム',
+			path: '/',
+		},
+		{
+			name: 'お問合せ',
 		},
 	]
 }

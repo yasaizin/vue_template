@@ -3,12 +3,12 @@ $tab: 680px;
 $sp: 480px;
 
 @mixin pc {
-  @media (max-width: ($pc)) {
+  @media (max-width: ($pc)) and (min-width: ($tab)) {
     @content;
   }
 }
 @mixin tab {
-  @media (max-width: ($tab)) {
+  @media (max-width: ($tab) and (min-width: ($sp))) {
     @content;
   }
 }
@@ -16,4 +16,36 @@ $sp: 480px;
   @media (max-width: ($sp)) {
     @content;
   }
+}
+
+@mixin pc-tab {
+	@media (min-width: ($sp)) {
+		@content;
+	}
+}
+@mixin tab-sp {
+	@media (max-width: ($tab)) {
+		@content;
+	}
+}
+
+@mixin keyframes($animation-name: animation) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }  
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($animation-name){
+  -webkit-animation: $animation-name;
+  -moz-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
 }

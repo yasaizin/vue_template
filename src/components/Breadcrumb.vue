@@ -3,10 +3,10 @@
     <div class="l-breadcrumb__inner">
       <ul class="l-breadcrumb__items">
         <li class="l-breadcrumb__item" v-for="breadcrumb in breadcrumbs.data" :key="breadcrumb.name">
-          <a v-if="breadcrumb.path" :href="breadcrumb.path" class="l-breadcrumb__text">
+          <router-link v-if="breadcrumb.path" :to="breadcrumb.path" class="l-breadcrumb__text">
             {{ breadcrumb.name }}
             <b-icon pack="fas" icon="chevron-right" class="bread-icon"></b-icon>
-          </a>
+          </router-link>
           <span v-else class="l-breadcrumb__text">{{ breadcrumb.name }}</span>
         </li>
       </ul>
@@ -21,9 +21,12 @@ export default {
 </script>
 
 <style lang=scss>
+.l-breadcrumb {
+	position: absolute;
+	z-index: 100;
+}
 .l-breadcrumb__items {
   text-align: left;
-  padding-left: $site-outer-width;
   font-size: 0.65em;
   li {
     display: inline-block;
