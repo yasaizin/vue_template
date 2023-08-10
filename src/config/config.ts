@@ -1,0 +1,11 @@
+const ALREADY_DATA_ERROR = "Already Data"
+const NOT_FOUND_ERROR = "Not Found"
+
+const API_ERROR = {
+    'ALREADY_DATA_ERROR': ALREADY_DATA_ERROR,
+    'NOT_FOUND_ERROR': NOT_FOUND_ERROR
+}
+
+export {
+    API_ERROR
+}
